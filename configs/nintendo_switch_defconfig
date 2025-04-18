@@ -4,9 +4,13 @@ CONFIG_VENDOR_NINTENDO=y
 # CONFIG_POST_DEVICE is not set
 CONFIG_COREBOOT_ROMSIZE_KB_1024=y
 CONFIG_CONSOLE_SERIAL_TEGRA210_UARTB=y
-CONFIG_HAVE_MTC=y
-CONFIG_HAVE_MTC_TABLES=y
-CONFIG_MTC_TABLES_DIRECTORY="../shofel2/mtc_tables"
+#edits to allow build of iram part of tool only for now as we port for t124 32 bit devices
+# we will use the MTC for Avionics and tk1 Jetson, not switch
+#CONFIG_HAVE_MTC=y
+#CONFIG_HAVE_MTC_TABLES=y
+#CONFIG_MTC_TABLES_DIRECTORY="../shofel2/mtc_tables"
 CONFIG_DEFAULT_CONSOLE_LOGLEVEL_6=y
-CONFIG_PAYLOAD_ELF=y
-CONFIG_PAYLOAD_FILE="../u-boot/u-boot.elf"
+#edits to allow build of iram part of tool only for now
+#will enable elf when we get our u-boot for 32 bit devices enabled
+#CONFIG_PAYLOAD_ELF=y
+#CONFIG_PAYLOAD_FILE="../u-boot/u-boot.elf"
