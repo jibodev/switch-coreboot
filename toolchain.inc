@@ -196,11 +196,13 @@ $(foreach arch,$(sort \
 	$(if $(CC_$(arch)),, $(eval COMPILERFAIL:=1) \
 	$(warning No compiler found for '$(arch)' architecture. \
 		Install one or use the coreboot toolchain?)) )
+# The ACPI version referneced is no longer available, in theory we do not need for the tegra or at least for the
+# boot rom code, so diable for now to compile
 # If iasl isn't present, fail
 # TODO: Figure out if iasl is even needed for the build.
-$(if $(IASL),, $(eval COMPILERFAIL:=1)$(eval IASLFAIL:=1) \
-	$(warning iasl not found. \
-		Please install it or use the coreboot toolchain.))
+#$(if $(IASL),, $(eval COMPILERFAIL:=1)$(eval IASLFAIL:=1) \
+#	$(warning iasl not found. \
+#		Please install it or use the coreboot toolchain.))
 endif
 
 # If the compiler check failed, print out warnings
